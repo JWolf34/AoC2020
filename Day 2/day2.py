@@ -1,4 +1,5 @@
 
+#Part 1
 def numValidPasswordsCount(passwords):
     numValid = 0
     for policy in passwords:
@@ -12,6 +13,7 @@ def numValidPasswordsCount(passwords):
 
     return numValid
 
+#Part 2
 def numValidPasswordsPos(passwords):
     numValid = 0
     for policy in passwords:
