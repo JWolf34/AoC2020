@@ -1,3 +1,4 @@
+import numpy
 
 # Part 1
 def numTreesHit(forest, hslope, vslope):
@@ -21,6 +22,27 @@ def numTreesHit(forest, hslope, vslope):
 
     return numTreesHit
 
+#Part 2
+def numTreesHitPerSlope(forest):
+    slopes = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
+    sumNumTreesHit = []
+
+    for slope in slopes:
+        hslope = slope[0]
+        vslope = slope[1]
+        sumNumTreesHit.append(numTreesHit(forest, hslope, vslope))
+    
+    return sumNumTreesHit
+
+
+#Part 2 (cont)
+def multiplyInList(lst):
+    result = 1
+    for i in lst:
+        result *= i
+    return result
+
+
     
 
 
@@ -38,5 +60,6 @@ def printForest(forest):
 if __name__ == "__main__":
     forest = createForest()
     #printForest(forest)
-
-    print(numTreesHit(forest, 3, 1))
+    #print(numTreesHit(forest, 3, 1))
+    sumNumTreesHit = numTreesHitPerSlope(forest)
+    print(multiplyInList(sumNumTreesHit))
