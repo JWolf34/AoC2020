@@ -1,19 +1,23 @@
 
+# Part 1
 def numTreesHit(forest, hslope, vslope):
     row = 0
     col = 0
-    maxrows = len(forest)
-    maxcols = len(forest[0])
+    maxrows = len(forest) - 1
+    maxcols = len(forest[0]) - 1
     tree = "#"
     square = "."
     numTreesHit = 0
 
     
-    while row <= maxrows and col <= maxcols:
+    while row <= maxrows:
         if forest[row][col] == tree:
             numTreesHit += 1
         row += vslope
         col += hslope
+        # loop columns back around
+        if col >= maxcols:
+            col -= maxcols
 
     return numTreesHit
 
